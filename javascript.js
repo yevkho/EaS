@@ -27,7 +27,8 @@ function setHoverEffect () {
     const divSquares = document.querySelectorAll(".square");
     divSquares.forEach((div) => {
         div.addEventListener("mouseover", (e) => {         
-            let currentOpacity = window.getComputedStyle(div).getPropertyValue("opacity"); //any other way to get the baseline opacity value?
+            let currentOpacity = window.getComputedStyle(div).opacity; //any other way to get the baseline opacity value?
+            console.log(currentOpacity);
             if (currentOpacity > 0) {
                 div.style.opacity = currentOpacity - 0.1;
             }
