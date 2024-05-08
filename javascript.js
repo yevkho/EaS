@@ -26,13 +26,11 @@ function setGrid () {
 function setHoverEffect () {
     const divSquares = document.querySelectorAll(".square");
     divSquares.forEach((div) => {
-        div.addEventListener("mouseover", () => {
-            let currentOpacity = window.getComputedStyle(div).getPropertyValue("opacity");
+        div.addEventListener("mouseover", (e) => {         
+            let currentOpacity = window.getComputedStyle(div).getPropertyValue("opacity"); //any other way to get the baseline opacity value?
             if (currentOpacity > 0) {
-                currentOpacity -= 0.1;
-                div.style.opacity = `${currentOpacity}`
+                div.style.opacity = currentOpacity - 0.1;
             }
-            
         });
     });
 }
